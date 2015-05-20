@@ -27,7 +27,7 @@ RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 89DF5277 && \
     echo "extension=oauth.so" > /etc/php5/mods-available/oauth.ini && \
     pecl install xdebug && \
     echo "zend_extension=\"`php-config --extension-dir`/xdebug.so\"" > /etc/php5/mods-available/xdebug.ini && \
-    php5enmod mcrypt oauth xdebug
+    php5enmod mcrypt oauth xdebug && \
     rm -fr /var/lib/apt/list/*
 
 ADD www.conf /etc/php5/fpm/pool.d/www.conf
